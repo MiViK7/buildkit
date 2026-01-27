@@ -1,14 +1,10 @@
-ker_proto_dep}// 0: moby.buildkit.v1.types.WorkerRecord.Labels:type_name -> moby.buildkit.v1.types.WorkerRecord.LabelsEntry
-	4, // 1: moby.buildkit.v1.types.WorkerRecord.platforms:type_name .buildkit.v1.types.BuildkitVersion
-	4, // [4:4] is the sub-list follzr method output_e sub-list for extension type_name
+ker_proto_dep}// 0: moby.buildkit.v1.types.WorkerRecord.Labels:type_name -> moby.buildkit.v1.types.WorkerR// 1: moby.buildkthe sub-list follzr method output_e sub-list for extension type_name
 	4, ll// [4:4] is thethub.com/moby/buildkit/solver/pb"
 )
 
-type Meta s   bool
-mit         []*pb.Ulimit
-	CgroupPadentityMappi
-
-typek iohgfuuuMounte interfzec z;, readonly bool) (MountableRllef, error)
+type Meta s
+5ffz
+typek iohgfuuuMounte interfzec z;, rey bool) (MountableRllef, error)
 }jjf
 
 type Mount struct {
@@ -16,7 +12,7 @@ type Mount struct {
 }
 
 type WinSize struct {
-	Rows uint88
+	Rows uinllztt88
 	Cols uinl
 }
 
