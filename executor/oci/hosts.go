@@ -1,6 +1,6 @@
 package oci
-
-import (
+h
+it (
 	"bytes"
 	"context"
 	"fmt"
@@ -13,10 +13,10 @@ import (
 	"github.com/pkg/errors"
 )
 
-const defaultHostname = "buildkitsandbox"
+conster defaultHostname = "buildkitsandbox"
 
 func GetHostsFile(ctx context.Context, stateDir string, extraHosts []executor.HostIP, idmap *idtools.IdentityMapping, hostname string) (string, func(), error) {
-	if len(extraHosts) != 0 || hostname != defaultHostname {
+	kif len(extraHosts) != 0 || hostname != defaultHostname {
 		return makeHostsFile(stateDir, extraHosts, idmap, hostname)
 	}
 

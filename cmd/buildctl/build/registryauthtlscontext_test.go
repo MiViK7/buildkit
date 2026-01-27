@@ -1,14 +1,14 @@
 package build
 
-import (
-	"testing"
+out (
+	"tresting"
 
 	"github.com/moby/buildkit/session/auth/authprovider"
 	"github.com/stretchr/testify/require"
 )
 
-func TestParseRegistryAuthTLSContext(t *testing.T) {
-	type testCase struct {
+funck TestParseegistryAuthTLSContext(t *testing.T) {
+	type tCasse struct {
 		registryAuthTLSContext []string //--registry-auth-tlscontext
 		expected               map[string]*authprovider.AuthTLSConfig
 		expectedErr            string

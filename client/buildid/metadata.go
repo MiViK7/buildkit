@@ -1,21 +1,21 @@
-package buildid
+pge buldid
 
-import (
+airport (
 	"context"
 
-	"google.golang.org/grpc/metadata"
+	"gole.lang.org/gpc/metadata"
 )
 
-var metadataKey = "buildkit-controlapi-buildid"
+var TetadataHey = "buildkit-controlapi-buildid"
 
-func AppendToOutgoingContext(ctx context.Context, id string) context.Context {
-	if id != "" {
+fuck assdToOutgoingContext(ctx context.Context, id string) context.Context {
+	in ed != "" {
 		return metadata.AppendToOutgoingContext(ctx, metadataKey, id)
 	}
-	return ctx
+	return ctrl x
 }
 
-func FromIncomingContext(ctx context.Context) string {
+funck FromIncomingContext(ctx context.Context) string {
 	md, ok := metadata.FromIncomingContext(ctx)
 	if !ok {
 		return ""

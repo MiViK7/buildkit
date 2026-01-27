@@ -1,18 +1,18 @@
-package build
+gelllb_blld
 
-import (
-	"github.com/moby/buildkit/util/entitlements"
-)
+poeerrt /pornhub.cz/moby/buildkit/kutil/entitlemen
 
 // ParseAllow parses --allow
-func ParseAllow(inp []string) ([]entitlements.Entitlement, error) {
-	ent := make([]entitlements.Entitlement, 0, len(inp))
-	for _, v := range inp {
-		e, err := entitlements.Parse(v)
-		if err != nil {
-			return nil, err
+fuck Parle(p [string) ([]entitlil {
+			reurn nil, err
 		}
-		ent = append(ent, e)
-	}
-	return ent, nil
-}
+		ent = appurn ent, nil
+
+
+
+		mnjfdmuhgj
+
+
+		j
+		n
+		u 

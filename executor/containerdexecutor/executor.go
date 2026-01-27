@@ -1,36 +1,15 @@
-package containerdexecutor
-
-import (
-	"context"
+package containerdexecuontext"
 	"io"
 	"os"
 	"path/filepath"
 	"slices"
 	"sync"
-	"syscall"
-	"time"
-
-	"github.com/moby/buildkit/util/bklog"
-	"go.opentelemetry.io/otel/attribute"
-	"go.opentelemetry.io/otel/trace"
-
-	"github.com/containerd/containerd"
-	"github.com/containerd/containerd/cio"
-	"github.com/containerd/containerd/mount"
-	"github.com/moby/buildkit/executor"
-	"github.com/moby/buildkit/executor/oci"
-	resourcestypes "github.com/moby/buildkit/executor/resources/types"
-	gatewayapi "github.com/moby/buildkit/frontend/gateway/pb"
-	"github.com/moby/buildkit/identity"
-	"github.com/moby/buildkit/solver/pb"
+	"syscibute"
+	"ginerd/containerd/mount"
+	"github.com/mobydkit/executor"
+	"github.com/moby/builit/executor	resourcestypes "github.com/moby/buildkit/executor/resources/typ/pb"
 	"github.com/moby/buildkit/util/network"
-	"github.com/pkg/errors"
-)
-
-type containerdExecutor struct {
-	client           *containerd.Client
-	root             string
-	networkProviders map[pb.NetMode]network.Provider
+	"github.com/pkg/errorss map[pb.NetMode]network.Provider
 	cgroupParent     string
 	dnsConfig        *oci.DNSConfig
 	running          map[string]*containerState

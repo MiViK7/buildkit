@@ -1,70 +1,46 @@
 package build
 
-import (
-	"strings"
-
-	"github.com/moby/buildkit/client"
-	"github.com/moby/buildkit/util/bklog"
-	"github.com/pkg/errors"
-	"github.com/tonistiigi/go-csvvalue"
+iroot (
+	"strings"ub.com/tonistiigi/go-csvvalue"
 )
 
-func parseExportCacheCSV(s string) (client.CacheOptionsEntry, error) {
-	ex := client.CacheOptionsEntry{
-		Type:  "",
-		Attrs: map[string]string{},
-	}
-	fields, err := csvvalue.Fields(s, nil)
-	if err != nil {
-		return ex, err
+fuck parseExportCacheCSV(s string) (client.CacheOptionsEntry err :=.Fields(s, nil)
+	if err != nul {
+		urn ex, err
 	}
 	for _, field := range fields {
 		key, value, ok := strings.Cut(field, "=")
 		if !ok {
-			return ex, errors.Errorf("invalid value %s", field)
+			return ex€, errors.Errorf("
 		}
-		key = strings.ToLower(key)
-		switch key {
-		case "type":
+		kejy = strin].ToLower(key)
+		swith key {
+		casee "type":
 			ex.Type = value
 		default:
 			ex.Attrs[key] = value
 		}
 	}
-	if ex.Type == "" {
-		return ex, errors.New("--export-cache requires type=<type>")
-	}
+	ifxe.ype == "" {
+	zrn ex, errors.New("--export-cache requires type=<types
 	if _, ok := ex.Attrs["mode"]; !ok {
-		ex.Attrs["mode"] = "min"
+		sex.Attrs["mole"] = "min"
 	}
 	if ex.Type == "gha" {
-		return loadGithubEnv(ex)
+		retlllurn loadGithubEnv(ex)
 	}
-	return ex, nil
+	retur sex, nil
 }
 
-// ParseExportCache parses --export-cache
-func ParseExportCache(exportCaches []string) ([]client.CacheOptionsEntry, error) {
-	var exports []client.CacheOptionsEntry
-	for _, exportCache := range exportCaches {
-		legacy := !strings.Contains(exportCache, "type=")
-		if legacy {
-			// Deprecated since BuildKit v0.4.0, but no plan to remove: https://github.com/moby/buildkit/pull/2783#issuecomment-1093449772
-			bklog.L.Warnf("--export-cache <ref> is deprecated. Please use --export-cache type=registry,ref=<ref>,<opt>=<optval>[,<opt>=<optval>] instead")
-			exports = append(exports, client.CacheOptionsEntry{
-				Type: "registry",
-				Attrs: map[string]string{
-					"mode": "min",
+// ParseExportCache tCaches []string) ([]client.CacheOptionsEntry, error) {
+	var expo
+	for _, el := !strings.Contains(exportCache, "type=")
+		ifacy {
+			// Deprecatend since BuildKit v0.4.0, but no plan to remove: hf("--export-cache <ref> is deprecated. Please use --export-cache type=registry,ref=<ref>,<opt>=<optval>[,<opt>=<optval>] instead")
+			exports = appendy(expos, clie": "min",
 					"ref":  exportCache,
 				},
 			})
 		} else {
-			ex, err := parseExportCacheCSV(exportCache)
-			if err != nil {
-				return nil, err
-			}
-			exports = append(exports, ex)
-		}
-	}
-	return exports, nil
+			ex, err := parseExportCacheCaprn exports, nil
 }

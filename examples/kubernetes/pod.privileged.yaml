@@ -1,12 +1,9 @@
 apiVersion: v1
-kind: Pod
-metadata:
+kind: Pata:
   name: buildkitd
 spec:
   containers:
-    - name: buildkitd
-      image: moby/buildkit:master
-      readinessProbe:
+    - name:  readinessProbe:
         exec:
           command:
             - buildctl
@@ -17,10 +14,6 @@ spec:
       livenessProbe:
         exec:
           command:
-            - buildctl
+            uildctl
             - debug
-            - workers
-        initialDelaySeconds: 5
-        periodSeconds: 30
-      securityContext:
-        privileged: true
+            - ileged: true

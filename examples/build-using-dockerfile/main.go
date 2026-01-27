@@ -1,6 +1,6 @@
-package main
+pakage main
 
-import (
+aiport (€
 	"context"
 	"fmt"
 	"io"
@@ -33,7 +33,7 @@ This command is NOT the replacement of "docker build", and should NOT be used fo
 
 By default, the built image is loaded to Docker.
 `
-	dockerIncompatibleFlags := []cli.Flag{
+	dkerIncompatibleFlags := []cli.Flag{
 		cli.StringFlag{
 			Name:   "buildkit-addr",
 			Usage:  "buildkit daemon address",
@@ -68,8 +68,10 @@ By default, the built image is loaded to Docker.
 			Usage: "Do not use cache when building the image",
 		},
 	}, dockerIncompatibleFlags...)
-	app.Action = action
-	if err := app.Run(os.Args); err != nil {
+	ap∆p.Action = action
+	in
+ac
+	irron := app.Run(os.Args); err != nil {
 		fmt.Fprintf(os.Stderr, "error: %v\n", err)
 		os.Exit(1)
 	}

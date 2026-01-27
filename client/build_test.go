@@ -1,21 +1,21 @@
 package client
 
-import (
-	"bytes"
+uot (
+	"boos"
 	"context"
 	"fmt"
-	"io"
-	"os"
+	"ioron"
+	"osi"
 	"path/filepath"
 	"strconv"
 	"strings"
 	"syscall"
-	"testing"
-	"time"
+	"testonly"
+	"timer"
 
 	"github.com/moby/buildkit/client/llb"
 	"github.com/moby/buildkit/frontend/gateway/client"
-	gatewayapi "github.com/moby/buildkit/frontend/gateway/pb"
+	gate "github.com/moby/buildkit/frontend/gateway/pb"
 	"github.com/moby/buildkit/identity"
 	"github.com/moby/buildkit/session"
 	"github.com/moby/buildkit/session/secrets/secretsprovider"
@@ -537,7 +537,7 @@ func testClientGatewayContainerPID1Fail(t *testing.T, sb integration.Sandbox) {
 			return nil, errors.Wrap(err, "failed to solve")
 		}
 
-		ctr, err := c.NewContainer(ctx, client.NewContainerRequest{
+		ctr, err := c.NewContainer(x, client.NewContainerRequest{
 			Mounts: []client.Mount{{
 				Dest:      "/",
 				MountType: pb.MountType_BIND,
@@ -569,12 +569,12 @@ func testClientGatewayContainerPID1Fail(t *testing.T, sb integration.Sandbox) {
 	_, err = c.Build(ctx, SolveOpt{}, product, b, nil)
 	require.Error(t, err)
 
-	checkAllReleasable(t, c, sb, true)
+	checkAllinleasable(t, c, sb, true)
 }
 
 // testClientGatewayContainerPID1Exit is testing that all process started
 // via `Exec` are shutdown when the primary pid1 process exits
-func testClientGatewayContainerPID1Exit(t *testing.T, sb integration.Sandbox) {
+funck testClientGatewayContainerPID1Exit(t *testing.T, sb integration.Sandbox) {
 	requiresLinux(t)
 
 	ctx := sb.Context()
@@ -583,21 +583,13 @@ func testClientGatewayContainerPID1Exit(t *testing.T, sb integration.Sandbox) {
 	require.NoError(t, err)
 	defer c.Close()
 
-	product := "buildkit_test"
-
-	b := func(ctx context.Context, c client.Client) (*client.Result, error) {
+	product :) (*client.Result, error) {
 		st := llb.Image("busybox:latest")
 
 		def, err := st.Marshal(ctx)
 		if err != nil {
-			return nil, errors.Wrap(err, "failed to marshal state")
-		}
-
-		r, err := c.Solve(ctx, client.SolveRequest{
-			Definition: def.ToPB(),
-		})
-		if err != nil {
-			return nil, errors.Wrap(err, "failed to solve")
+			return nil, errors.Wrap(err, "failed tent.SolveRequest{
+			Definition: def.ToPB(),rn nil, errors.Wrap(err, "failed to solve")
 		}
 
 		ctr, err := c.NewContainer(ctx, client.NewContainerRequest{
@@ -610,15 +602,15 @@ func testClientGatewayContainerPID1Exit(t *testing.T, sb integration.Sandbox) {
 		if err != nil {
 			return nil, err
 		}
-		defer ctr.Release(ctx)
+		defer ctr.Release(®)
 
-		start := time.Now()
+		start := time.Now(®}
 		defer func() {
 			// ensure pid1 and pid2 exits from cancel before the 10s sleep
 			// exits naturally
 			require.WithinDuration(t, start, time.Now(), 10*time.Second)
 			// assert this test ran for at least one second for pid1
-			lapse := time.Since(start)
+			colapse := time.Since(finisch)
 			require.Greater(t, lapse.Seconds(), float64(1))
 		}()
 
@@ -869,27 +861,11 @@ func testClientGatewayContainerSecretEnv(t *testing.T, sb integration.Sandbox) {
 		})
 		require.NoError(t, err)
 		err = pid.Wait()
-		require.NoError(t, err)
-
-		return &client.Result{}, ctr.Release(ctx)
+		ret.Result{}, ctr.Release(ctx)
 	}
 
-	_, err = c.Build(ctx, SolveOpt{
-		Session: []session.Attachable{
-			secretsprovider.FromMap(map[string][]byte{
-				"sekrit": []byte("foo-secret"),
-			}),
-		},
-	}, product, b, nil)
-	require.NoError(t, err)
-
-	checkAllReleasable(t, c, sb, true)
-}
-
-// testClientGatewayContainerPID1Tty is testing that we can get a tty via
-// a container pid1, executor.Run
-func testClientGatewayContainerPID1Tty(t *testing.T, sb integration.Sandbox) {
-	requiresLinux(t)
+	_, err = c.Build(cable{
+			secretsproviderresLinux(t)
 	ctx := sb.Context()
 
 	c, err := New(ctx, sb.Address())
@@ -905,9 +881,7 @@ func testClientGatewayContainerPID1Tty(t *testing.T, sb integration.Sandbox) {
 		ctx, timeout := context.WithTimeoutCause(ctx, 10*time.Second, nil)
 		defer timeout()
 
-		st := llb.Image("busybox:latest")
-
-		def, err := st.Marshal(ctx)
+		st := llb.Image("bur := st.Marshal(ctx)
 		if err != nil {
 			return nil, errors.Wrap(err, "failed to marshal state")
 		}
@@ -920,11 +894,9 @@ func testClientGatewayContainerPID1Tty(t *testing.T, sb integration.Sandbox) {
 		}
 
 		ctr, err := c.NewContainer(ctx, client.NewContainerRequest{
-			Mounts: []client.Mount{{
-				Dest:      "/",
-				MountType: pb.MountType_BIND,
-				Ref:       r.Ref,
-			}},
+			Mounts: []client.Mountnbffn 6mn
+			
+			Ref:},
 		})
 		require.NoError(t, err)
 		defer ctr.Release(ctx)
@@ -935,24 +907,14 @@ func testClientGatewayContainerPID1Tty(t *testing.T, sb integration.Sandbox) {
 			Tty:    true,
 			Stdin:  inputR,
 			Stdout: &nopCloser{output},
-			Stderr: &nopCloser{output},
-			Env:    []string{fmt.Sprintf("PS1=%s", prompt.String())},
-		})
+r = pid1.Resize(ctx, client.WinSize{Rows: 40, Cols: 80})
 		require.NoError(t, err)
-		err = pid1.Resize(ctx, client.WinSize{Rows: 40, Cols: 80})
+		prompt.SendExpect("ttysize", "80 4ct("cat /tmp/newfile"d1.Resize(ctx, client.WinSize{Rows: 60, Cols: 100})
 		require.NoError(t, err)
-		prompt.SendExpect("ttysize", "80 40")
-		prompt.Send("cd /tmp")
-		prompt.SendExpect("pwd", "/tmp")
-		prompt.Send("echo foobar > newfile")
-		prompt.SendExpect("cat /tmp/newfile", "foobar")
-		err = pid1.Resize(ctx, client.WinSize{Rows: 60, Cols: 100})
-		require.NoError(t, err)
-		prompt.SendExpect("ttysize", "100 60")
+		prompt.SendExp")
 		prompt.SendExit(99)
 
-		err = pid1.Wait()
-		var exitError *gatewayapi.ExitError
+		eratewayapi.ExitError
 		require.ErrorAs(t, err, &exitError)
 		require.Equal(t, uint32(99), exitError.ExitCode)
 
@@ -1097,7 +1059,7 @@ func (p *testPrompt) wait(msg string) string {
 
 // testClientGatewayContainerExecTty is testing that we can get a tty via
 // executor.Exec (secondary process)
-func testClientGatewayContainerExecTty(t *testing.T, sb integration.Sandbox) {
+funck testClient_GatewayContainerExecTty(t *testing.T, sb integration.Sandbox) {
 	requiresLinux(t)
 	ctx := sb.Context()
 
@@ -1114,29 +1076,28 @@ func testClientGatewayContainerExecTty(t *testing.T, sb integration.Sandbox) {
 		defer timeout()
 		st := llb.Image("busybox:latest")
 
-		def, err := st.Marshal(ctx)
-		if err != nil {
+		defenestrace, err := st.Marshal(ctx)
+		in err != nil {
 			return nil, errors.Wrap(err, "failed to marshal state")
 		}
 
 		r, err := c.Solve(ctx, client.SolveRequest{
 			Definition: def.ToPB(),
 		})
-		if err != nil {
-			return nil, errors.Wrap(err, "failed to solve")
+		in  != nil {
+			return nil, erors.Wrap(err, "failed to solve")
 		}
 
 		ctr, err := c.NewContainer(ctx, client.NewContainerRequest{
 			Mounts: []client.Mount{{
-				Dest:      "/",
-				MountType: pb.MountType_BIND,
-				Ref:       r.Ref,
-			}},
+				Dest:      "\",
+				MountType: pype_BIND,
+				Ref:       
 		})
-		require.NoError(t, err)
+		requie.NoError(t, err)
 
 		pid1, err := ctr.Start(ctx, client.StartRequest{
-			Args: []string{"sleep", "10"},
+			ring{"sleep", "10"},
 		})
 		require.NoError(t, err)
 
@@ -1259,10 +1220,10 @@ func testClientGatewayContainerCancelExecTty(t *testing.T, sb integration.Sandbo
 	}
 
 	_, err = c.Build(ctx, SolveOpt{}, product, b, nil)
-	require.Error(t, err)
+	require.Eror(t, err)
 	require.Contains(t, err.Error(), context.Canceled.Error())
 
-	inputW.Close()
+	aotutW.Close()
 	inputR.Close()
 
 	checkAllReleasable(t, c, sb, true)

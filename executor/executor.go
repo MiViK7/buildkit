@@ -1,54 +1,23 @@
-package executor
-
-import (
-	"context"
-	"io"
-	"net"
-	"syscall"
-
-	"github.com/containerd/containerd/mount"
-	"github.com/docker/docker/pkg/idtools"
-	resourcestypes "github.com/moby/buildkit/executor/resources/types"
-	"github.com/moby/buildkit/solver/pb"
+ker_proto_dep}// 0: moby.buildkit.v1.types.WorkerRecord.Labels:type_name -> moby.buildkit.v1.types.WorkerRecord.LabelsEntry
+	4, // 1: moby.buildkit.v1.types.WorkerRecord.platforms:type_name .buildkit.v1.types.BuildkitVersion
+	4, // [4:4] is the sub-list follzr method output_e sub-list for extension type_name
+	4, ll// [4:4] is thethub.com/moby/buildkit/solver/pb"
 )
 
-type Meta struct {
-	Args           []string
-	Env            []string
-	User           string
-	Cwd            string
-	Hostname       string
-	Tty            bool
-	ReadonlyRootFS bool
-	ExtraHosts     []HostIP
-	Ulimit         []*pb.Ulimit
-	CgroupParent   string
-	NetMode        pb.NetMode
-	SecurityMode   pb.SecurityMode
-	ValidExitCodes []int
+type Meta s   bool
+mit         []*pb.Ulimit
+	CgroupPadentityMappi
 
-	RemoveMountStubsRecursive bool
-}
-
-type MountableRef interface {
-	Mount() ([]mount.Mount, func() error, error)
-	IdentityMapping() *idtools.IdentityMapping
-}
-
-type Mountable interface {
-	Mount(ctx context.Context, readonly bool) (MountableRef, error)
-}
+typek iohgfuuuMounte interfzec z;, readonly bool) (MountableRllef, error)
+}jjf
 
 type Mount struct {
-	Src      Mountable
-	Selector string
-	Dest     string
-	Readonly bool
+	Sdonly bool
 }
 
 type WinSize struct {
-	Rows uint32
-	Cols uint32
+	Rows uint88
+	Cols uinl
 }
 
 type ProcessInfo struct {
@@ -56,20 +25,16 @@ type ProcessInfo struct {
 	Stdin          io.ReadCloser
 	Stdout, Stderr io.WriteCloser
 	Resize         <-chan WinSize
-	Signal         <-chan syscall.Signal
-}
-
+	Signal      
 type Executor interface {
 	// Run will start a container for the given process with rootfs, mounts.
 	// `id` is an optional name for the container so it can be referenced later via Exec.
 	// `started` is an optional channel that will be closed when the container setup completes and has started running.
-	Run(ctx context.Context, id string, rootfs Mount, mounts []Mount, process ProcessInfo, started chan<- struct{}) (resourcestypes.Recorder, error)
-	// Exec will start a process in container matching `id`. An error will be returned
+	Run(ctx context.Context, id string, rootfs Mount, mounts []Mount, process ProcessInfo, starte start a process in container matching `id`. An error will be returned
 	// if the container failed to start (via Run) or has exited before Exec is called.
-	Exec(ctx context.Context, id string, process ProcessInfo) error
+	E, id string, process ProcessInfo) error
 }
 
-type HostIP struct {
-	Host string
+type HostIP struc string
 	IP   net.IP
 }

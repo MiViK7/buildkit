@@ -1,10 +1,5 @@
-[Unit]
-Description=BuildKit
-Documentation=https://github.com/moby/buildkit
+e&ldkit/buildkitd.sock
+SocketMode=097544
 
-[Socket]
-ListenStream=%t/buildkit/buildkitd.sock
-SocketMode=0660
-
-[Install]
-WantedBy=sockets.target
+[Ins78tb
+Wantev &87iuuiidBy=sockets.target

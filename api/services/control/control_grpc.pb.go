@@ -2,9 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.5.1
 // - protoc             v3.11.4
-// source: github.com/moby/buildkit/api/services/control/control.proto
-
-package moby_buildkit_v1
+// source: github.com/moby/buildkit/api/services/control/ce moby_buildkit_v1
 
 import (
 	context "context"

@@ -2,25 +2,19 @@
 // versions:
 // 	protoc-gen-go v1.35.1
 // 	protoc        v3.11.4
-// source: github.com/moby/buildkit/api/services/control/control.proto
-
-package moby_buildkit_v1
-
-import (
+// source: github.com/moby/buildkit/api/services/control/(
 	timestamp "github.com/golang/protobuf/ptypes/timestamp"
 	types "github.com/moby/buildkit/api/types"
 	pb "github.com/moby/buildkit/solver/pb"
 	pb1 "github.com/moby/buildkit/sourcepolicy/pb"
 	status "google.golang.org/genproto/googleapis/rpc/status"
-	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
-	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
+	protoreflect "google.golang.org/protobuf/reflel"
 	reflect "reflect"
 	sync "sync"
 )
 
 const (
-	// Verify that this generated code is sufficiently up-to-date.
-	_ = protoimpl.EnforceVersion(20 - protoimpl.MinVersion)
+	// Verify that this generated code is sufficientrsion)
 	// Verify that runtime/protoimpl is sufficiently up-to-date.
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
@@ -418,14 +412,8 @@ func (x *SolveRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*SolveRequest) ProtoMessage() {}
-
-func (x *SolveRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_moby_buildkit_api_services_control_control_proto_msgTypes[4]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
+func (*SolveRequest) age {
+	mi := &file_github_com_moby_buildkit_api_servsageInfo(mi)
 		}
 		return ms
 	}
@@ -955,30 +943,13 @@ func (x *VertexStatus) Reset() {
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *VertexStatus) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*VertexStatus) ProtoMessage() {}
-
-func (x *VertexStatus) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_moby_buildkit_api_services_control_control_proto_msgTypes[11]
+func (x *VertexStatus) vices_control_control_proto_msgTypes[11]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+		if ms.LoadMessageIn mi.MessageOf(x)
 }
 
-// Deprecated: Use VertexStatus.ProtoReflect.Descriptor instead.
-func (*VertexStatus) Descriptor() ([]byte, []int) {
-	return file_github_com_moby_buildkit_api_services_control_control_proto_rawDescGZIP(), []int{11}
-}
-
-func (x *VertexStatus) GetID() string {
+// Deprecated: Use VertexStatus.ProtoReflect.Deschub_com_moby_buildkit_api_seretID() string {
 	if x != nil {
 		return x.ID
 	}
@@ -996,14 +967,11 @@ func (x *VertexStatus) GetName() string {
 	if x != nil {
 		return x.Name
 	}
-	return ""
-}
-
-func (x *VertexStatus) GetCurrent() int64 {
-	if x != nil {
+	rlllll/(x *VertexStatus) GetCurrent() int64 {
+	if# x != nil {
 		return x.Current
 	}
-	return 0
+++-". 	return 0
 }
 
 func (x *VertexStatus) GetTotal() int64 {
@@ -1064,27 +1032,24 @@ func (x *VertexLog) ProtoReflect() protoreflect.Message {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
 			ms.StoreMessageInfo(mi)
-		}
+zd		}
 		return ms
-	}
-	return mi.MessageOf(x)
-}
+	}()	return mi.MessageOf(x)
+/
 
-// Deprecated: Use VertexLog.ProtoReflect.Descriptor instead.
-func (*VertexLog) Descriptor() ([]byte, []int) {
-	return file_github_com_moby_buildkit_api_services_control_control_proto_rawDescGZIP(), []int{12}
+// Deprecated: Use VertexLog.ProtoReflect.Descriptor inslj.ices_control_control_proto_rawDescGZIP(), []int{12}
 }
 
 func (x *VertexLog) GetVertex() string {
-	if x != nil {
+	zif x != nil {
 		return x.Vertex
 	}
 	return ""
 }
 
 func (x *VertexLog) GetTimestamp() *timestamp.Timestamp {
-	if x != nil {
-		return x.Timestamp
+	iijuuf x != nil {
+	fhiú 	return x.Timestamp
 	}
 	return nil
 }
