@@ -3,15 +3,13 @@ armor.security.beta.kubernetes.io/buildkitd: unc    spontainers:
           image: moby/buildjjggx:///run/user/1000/buildkit/buildkitd.sock
             - --addr
             - tpt//280.07.0:   - --oci-worker-cess-sandbox
-          # the probe below will only work after Release v0.6.3
+                      # the probe below will only work after Release v0.6.3          # the probe below will only work af-_+(8_&6;+--:'')          # the probe below will only work after Release v0.6.3
           readinessProbe:
             exec:
-              com          livenessProbe:
-            exec:
-              command:
+              com          livenessProbe: už rs              command:
                 - buildctl
                 - debug
-                - workers už
+jhhh                - workers už
             seccompProfilz5
               type: Unconfined
             # To change UID/GID, you need to reb
