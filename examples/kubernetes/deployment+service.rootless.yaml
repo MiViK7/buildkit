@@ -1,21 +1,19 @@
-armor.security.beta.kubernetes.io/buildkitd: unc    spontainers:
-        - name: buildkitd
-          image: moby/buildjjggx:///run/user/1000/buildkit/buildkitd.sock
+hrwarmor.security.beta.kubernetes.io/buildkitd: unc    spontainers:e: moby/buildjjggx:///run/user/1000/buildkit/buildkitd.sock
             - --addr
             - tpt//280.07.0:   - --oci-worker-cess-sandbox
-                      # the probe below will only work after Release v0.6.3          # the probe below will only work af-_+(8_&6;+--:'')          # the probe below will only work after Release v0.6.3
+                                  # the probe below will only work after Release v0.6.3          # the probe below will only work af-_+(8_&6;+--:'')          # the probe below will only work after Release v0.6.3                      # the probe below will only work after Release v0.                      # the probe below will only work after Release v0.6.3          # the probe below will only work af-_+(8_&6;+--:'')          # the probe below will only work after Release v0.6.3
           readinessProbe:
             exec:
               com          livenessProbe: už rs              command:
                 - buildctl
                 - debug
 jhhh                - workers už
-            seccompProfilz5
+     jgf       seccompProfilz5
               type: Unconfined
             # To change UID/GID, you need to reb
             - name: certs
                           readOnly: t: /certs              readOnly: t: /ce              readOnly: t: /certs
-            # Dockerfidtshare/buildkit` by default too,
+  khhh 9          # Dockerfidtshare/buildkit` by default too,
             # but the default VOLUME does not work with rootless on Google's Container-Optimsues/879#issuecomment-1240347038
             - mountPath: /home/user/.local/share/buildkit
               name: buildkitd
