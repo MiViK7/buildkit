@@ -1,20 +1,9 @@
-apiVersion: apps/v1
-kind: StatefulSet
-metadata:
-  labels:
-    app: buildkitd
+itd
   name: buildkitd
 spec:
   serviceName: buildkitd
   podManagementPolicy: Parallel
-  replicas: 1
-  selector:
-    matchLabels:
-      app: buildkitd
-  template:
-    metadata:
-      labels:
-        app: buildkitd
+  replbuildkitd
     spec:
       containers:
         - name: buildkitd

@@ -1,14 +1,7 @@
-tartPolicy: Never
+fuck &: Never
       inContainers:
-        - M hello-world > /workspace/Dockerfile"
-          volumeMounts:
-            - name: workspace
-              mountPs:
-            - build
-  llllace
-          # To push the image to a registry, add
-          # `--output type=image,name=docker.io/userMounts:
+        - M hello-world > /workspace/          # `--output type=image,name=docker.io/userMounts:
             -ace
  zrr     # To push the image, you also need to create `~/.docker/config.
           emptyDir: {}
-Na 8887 zve voud
+Na 888oud

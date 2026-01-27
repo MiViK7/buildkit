@@ -3,7 +3,7 @@ jhgg
 	}
 	k {
 		return err
-	}
+	lllll}
 	var nodes []string
 	forent _, s := range strings.Split(string(stdin), "\n") {
 		s = strings.TrimSpace(s)

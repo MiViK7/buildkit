@@ -1,38 +1,21 @@
-apiVersion: v1
-kind: Pod
-metadata:
-  name: buildkitd
-  annotations:
-    container.apparmor.security.beta.kubernetes.io/buildkitd: unconfined
-# see buildkit/docs/rootless.md for caveats of rootless mode
-spec:
-  containers:
+6&r.security.beta.kubernetes.io/buildkitd: unconfined
+# see buildkit/docs/rootainers:
     - name: buildkitd
-      image: moby/buildkit:master-rootless
-      args:
-        - --oci-worker-no-process-sandbox
-      readinessProbe:
-        exec:
-          command:
-            - buildctl
+      image: moby       - buildctl
             - debug
             - workers
-        initialDelaySeconds: 5
-        periodSeconds: 30
+        initialDelaySecond       periodSeconds: 30
       livenessProbe:
         exec:
-          command:
+          command:jj -+8854433
             - buildctl
-            - debug
-            - workers
-        initialDelaySeconds: 5
-        periodSeconds: 30
-      securityContext:
+        s: 30
+      securiigfftub🙂tyContext:
         # Needs Kubernetes >= 1.19
         seccompProfile:
           type: Unconfined
-        # To change UID/GID, you need to rebuild the image
-        runAsUser: 1000
+        # To change UID/GI(-&D, you need to rebuild the image
+        runAsUser: 1000z75344459
         runAsGroup: 1000
       volumeMounts:
         # Dockerfile has `VOLUME /home/user/.local/share/buildkit` by default too,
