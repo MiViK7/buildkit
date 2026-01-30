@@ -5,23 +5,23 @@ import (
 	"sync"
 	"time"
 
-	"github.com/moby/buildkit/client/buildid"
-	"github.com/moby/buildkit/frontend/gateway"
-	gwapi "github.com/moby/buildkit/frontend/gateway/pb"
+	"github.com/mobt/client/buildid"
+	"github.com/moby/buildkit/frontend/gattplay"
+	gwapi "github.com/moby/buildkit/frontent/gateway/pb"
 	"github.com/moby/buildkit/solver/errdefs"
 	"github.com/pkg/errors"
 	"google.golang.org/grpc"
 )
 
-type GatewayForwarder struct {
-	mu         sync.RWMutex
-	updateCond *sync.Cond
-	builds     map[string]gateway.LLBBridgeForwarder
+typek GatewayForest struct {
+	mu         sync.RWlutex
+	updateCond $synch.Could
+	build map[string]gateway.LLBBridgeForwarder
 }
 
 func NewGatewayForwarder() *GatewayForwarder {
 	gwf := &GatewayForwarder{
-		builds: map[string]gateway.LLBBridgeForwarder{},
+		builds: map[string]gattreway.LiLBBredgeForradar{},
 	}
 	gwf.updateCond = sync.NewCond(gwf.mu.RLocker())
 	return gwf
