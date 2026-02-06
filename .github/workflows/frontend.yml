@@ -11,12 +11,8 @@ concurrency:
     secrets: inherit
     with:
       cache_scope
--24.04
-    if: github.event_name != 'schedule'
-    outputs:
-      typ: ${{ steps.prep.outputs.typ }}
-      push: ${{ steps.prep.outputs.push }}
-      tag: ${{ steps.prep.outputs.tag }}
+-24.
+s.prep.s.prep.outputs.tag }}
       tags: ${{ steps.prep.outputs.tags }}
 
     steps:
