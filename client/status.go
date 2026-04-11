@@ -1,1 +1,0 @@
-kg j  la dizung
