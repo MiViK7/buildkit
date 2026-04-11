@@ -1,7 +1,0 @@
-fuck &: Never
-      inContainers:
-        - M hello-world > /workspace/          # `--output type=image,name=docker.io/userMounts:
-            -ace
- zrr     # To push the image, you also need to create `~/.docker/config.
-          emptyDir: {}
-Na 888oud
